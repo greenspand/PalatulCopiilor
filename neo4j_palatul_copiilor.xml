@@ -1,12 +1,10 @@
-<ul class="graph-diagram-markup" data-internal-scale="2.9" data-external-scale="1">
+<ul class="graph-diagram-markup" data-internal-scale="2.73" data-external-scale="1">
   <li class="node" data-node-id="0" data-x="61.118308691991125" data-y="78.66418732734678">
     <span class="caption">Cerc</span>
     <dl class="properties">
       <dt>nume</dt>
       <dd>"Grafica"</dd>
-      <dt>id</dt>
-      <dd>1</dd>
-      <dt>numar locuri</dt>
+      <dt>locuri</dt>
       <dd>5</dd>
       <dt>pret</dt>
       <dd>150</dd>
@@ -15,12 +13,10 @@
   <li class="node" data-node-id="1" data-x="246.99053452890104" data-y="245.79612995904245">
     <span class="caption">Instructor</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>1</dd>
       <dt>nume</dt>
       <dd>"Dan Sabin"</dd>
       <dt>varsta</dt>
-      <dd>"46"</dd>
+      <dd>46</dd>
       <dt>sex</dt>
       <dd>"M"</dd>
       <dt>adresa</dt>
@@ -30,12 +26,8 @@
   <li class="node" data-node-id="2" data-x="454.6535652257221" data-y="18.90332581725303">
     <span class="caption">Copil</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>1</dd>
       <dt>nume</dt>
       <dd>"Ioana Muntean"</dd>
-      <dt>data nastere</dt>
-      <dd>"12.09.2004"</dd>
       <dt>sex</dt>
       <dd>"F"</dd>
       <dt>varsta</dt>
@@ -47,12 +39,8 @@
   <li class="node" data-node-id="3" data-x="554.49743806863" data-y="220.6590704616112">
     <span class="caption">Copil</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>2</dd>
       <dt>nume</dt>
       <dd>"Viorel Gustav"</dd>
-      <dt>data nastere</dt>
-      <dd>"12.09.2005"</dd>
       <dt>sex</dt>
       <dd>"M"</dd>
       <dt>varsta</dt>
@@ -61,15 +49,11 @@
       <dd>"Str Bucium nr 12, Bl. x Ap 2"</dd>
     </dl>
   </li>
-  <li class="node" data-node-id="4" data-x="521.5759824555498" data-y="429.3215754828247">
+  <li class="node" data-node-id="4" data-x="521.5759824555498" data-y="431.57370567684944">
     <span class="caption">Copil</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>3</dd>
       <dt>nume</dt>
       <dd>"Dorin Marian"</dd>
-      <dt>data nastere</dt>
-      <dd>"12.09.2006"</dd>
       <dt>sex</dt>
       <dd>"M"</dd>
       <dt>varsta</dt>
@@ -81,12 +65,8 @@
   <li class="node" data-node-id="5" data-x="301.2496144141821" data-y="529.5739663772213">
     <span class="caption">Copil</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>4</dd>
       <dt>nume</dt>
       <dd>"Dragos Paraschiv"</dd>
-      <dt>data nastere</dt>
-      <dd>"12.09.2005"</dd>
       <dt>sex</dt>
       <dd>"M"</dd>
       <dt>varsta</dt>
@@ -98,12 +78,8 @@
   <li class="node" data-node-id="6" data-x="246.99053452890104" data-y="-11.633288304808865">
     <span class="caption">Copil</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>5</dd>
       <dt>nume</dt>
       <dd>"Maria Bejean"</dd>
-      <dt>data nastere</dt>
-      <dd>"12.09.2008"</dd>
       <dt>sex</dt>
       <dd>"F"</dd>
       <dt>varsta</dt>
@@ -112,28 +88,24 @@
       <dd>"Str Fumului nr 10, Bl. A Ap 5"</dd>
     </dl>
   </li>
-  <li class="node" data-node-id="7" data-x="-127.79612087396475" data-y="220.6590704616112">
+  <li class="node" data-node-id="7" data-x="-190.8385400839866" data-y="278.17146976478205">
     <span class="caption">Categorie</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>1</dd>
       <dt>nume</dt>
       <dd>"Arte Plastice"</dd>
     </dl>
   </li>
-  <li class="node" data-node-id="8" data-x="-127.79612087396475" data-y="78.66418732734678">
+  <li class="node" data-node-id="8" data-x="-238.39686554758563" data-y="50.183871620835376">
     <span class="caption">PalatulCopiilor</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>1</dd>
+      <dt>adresa</dt>
+      <dd>"Str Gutuiului, Cluj-Napoca"</dd>
+      <dt>telefon</dt>
+      <dd>1234567</dd>
     </dl>
   </li>
   <li class="node" data-node-id="9" data-x="-127.79612087396475" data-y="-137.201836932635">
     <span class="caption">Anunturi si Noutati</span>
-    <dl class="properties">
-      <dt>id</dt>
-      <dd>1</dd>
-    </dl>
   </li>
   <li class="node" data-node-id="10" data-x="-127.79612087396475" data-y="-312.578421119969">
     <span class="caption">Anunt</span>
@@ -144,14 +116,12 @@
       <dd>"Lorem ipsum"</dd>
     </dl>
   </li>
-  <li class="node" data-node-id="11" data-x="-402.1404030775368" data-y="18.90332581725303">
+  <li class="node" data-node-id="11" data-x="-435.0342254787302" data-y="-11.633288304808865">
     <span class="caption">Cerc</span>
     <dl class="properties">
       <dt>nume</dt>
       <dd>"Programare"</dd>
-      <dt>id</dt>
-      <dd>2</dd>
-      <dt>numar locuri</dt>
+      <dt>locuri</dt>
       <dd>20</dd>
       <dt>pret</dt>
       <dd>100</dd>
@@ -160,12 +130,10 @@
   <li class="node" data-node-id="12" data-x="-615.7620638344085" data-y="50.183871620835376">
     <span class="caption">Instructor</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>2</dd>
       <dt>nume</dt>
       <dd>"Linus Torvalds"</dd>
       <dt>varsta</dt>
-      <dd>"40"</dd>
+      <dd>40</dd>
       <dt>sex</dt>
       <dd>"M"</dd>
       <dt>adresa</dt>
@@ -175,19 +143,17 @@
   <li class="node" data-node-id="13" data-x="-480.6847192540157" data-y="-176.49036695351322">
     <span class="caption">Categorie</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>2</dd>
       <dt>nume</dt>
       <dd>"Informatica"</dd>
     </dl>
   </li>
-  <li class="node" data-node-id="14" data-x="61.118308691991125" data-y="220.6590704616112">
+  <li class="node" data-node-id="14" data-x="61.118308691991125" data-y="191.02407521214988">
     <span class="caption">Orar</span>
     <dl class="properties">
       <dt>ziua</dt>
       <dd>"Miercuri"</dd>
       <dt>ora</dt>
-      <dd>14</dd>
+      <dd>"14:30"</dd>
     </dl>
   </li>
   <li class="node" data-node-id="15" data-x="-435.0342254787302" data-y="155.69233462176751">
@@ -202,12 +168,8 @@
   <li class="node" data-node-id="16" data-x="-857.9851543406365" data-y="18.90332581725303">
     <span class="caption">Copil</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>6</dd>
       <dt>nume</dt>
       <dd>"Pop Viorel"</dd>
-      <dt>data nastere</dt>
-      <dd>"12.09.2004"</dd>
       <dt>sex</dt>
       <dd>"M"</dd>
       <dt>varsta</dt>
@@ -216,15 +178,11 @@
       <dd>"Str Buciegi nr 14, Bl. z Ap n"</dd>
     </dl>
   </li>
-  <li class="node" data-node-id="17" data-x="-821.1421992861004" data-y="134.9550297178072">
+  <li class="node" data-node-id="17" data-x="-818.8859106528587" data-y="132.69872990596542">
     <span class="caption">Copil</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>7</dd>
       <dt>nume</dt>
       <dd>"Gavril Dan"</dd>
-      <dt>data nastere</dt>
-      <dd>"12.09.2004"</dd>
       <dt>sex</dt>
       <dd>"M"</dd>
       <dt>varsta</dt>
@@ -236,12 +194,8 @@
   <li class="node" data-node-id="18" data-x="-779.370782260237" data-y="191.02407521214988">
     <span class="caption">Copil</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>8</dd>
       <dt>nume</dt>
       <dd>"Olga Musat"</dd>
-      <dt>data nastere</dt>
-      <dd>"12.09.2004"</dd>
       <dt>sex</dt>
       <dd>"F"</dd>
       <dt>varsta</dt>
@@ -253,12 +207,8 @@
   <li class="node" data-node-id="19" data-x="-615.7620638344085" data-y="245.79612995904245">
     <span class="caption">Copil</span>
     <dl class="properties">
-      <dt>id</dt>
-      <dd>9</dd>
       <dt>nume</dt>
       <dd>"Bob Mazare"</dd>
-      <dt>data nastere</dt>
-      <dd>"12.09.2004"</dd>
       <dt>sex</dt>
       <dd>"M"</dd>
       <dt>varsta</dt>
