@@ -1,0 +1,68 @@
+<!-- views/pages/cercuri.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <form method="post" action="">
+            <div class="form-group">
+                <label for="cerc_nume">Nume</label>
+                <input type="text" class="form-control" name="cerc_nume" id="cerc_nume" placeholder="Grafica">
+            </div>
+            <div class="form-group">
+                <label for="pretCerc" name="cerc_pret">Pret</label>
+                <input type="text" class="form-control" name="cerc_pret" id="cerc_pret" placeholder="120">
+            </div>
+            <div class="form-group">
+                <label for="cercLocuri">Locuri</label>
+                <input type="text" class="form-control" name="cerc_locuri" id="cerc_locuri" placeholder="14">
+            </div>
+            <div class="form-group">
+                <label for="selectCategorieCerc">Alegeti categorie cerc</label>
+                <select class="form-control" name="cerc_categorie" id="cerc_categorie">
+                    <option>Culturale</option>
+                    <option>Muzical artistice</option>
+                    <option>Arte plastice</option>
+                    <option>Tehnico-aplicative</option>
+                    <option>Sport</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="descriereCerc">Descriere cerc</label>
+                <textarea class="form-control" id="descriereCerc" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Salveaza</button>
+        </form>
+        <h2>Cercuri</h2>
+        <div class="row">
+            <% cercuri.forEach(function(cerc){ %>
+                <div class="col-sm-4">
+                    <div class="well">
+                        <h3>
+                            <%= cerc.nume %>
+                        </h3>
+                        <h4>Pret:
+                            <%= cerc.pret %> RON</h4>
+                        <h4>Locuri:
+                            <%=cerc.locuri%>
+                        </h4>
+                    </div>
+                </div>
+                <%})%>
+        </div>
+    </main>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+</html>

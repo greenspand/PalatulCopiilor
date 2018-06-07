@@ -1,0 +1,49 @@
+<!-- views/pages/aunturi.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+            <form method="post" action="">
+            <div class="form-group">
+                <label for="anunt_titlu">Titlu</label>
+                <input type="text" class="form-control" name="anunt_titlu" id="anunt_titlu" placeholder="Azi a venit primavara">
+            </div>
+            <div class="form-group">
+                <label for="anunt_mesaj">Mesaj</label>
+                <textarea class="form-control" name = "anunt_mesaj" id="anunt_mesaj" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Adauga</button>
+        </form>
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Anunturi</h4>
+                <% anunturi.forEach(function(anunt){ %>
+                    <div class="well">
+                        <h4>
+                            <%= anunt.titlu %>
+                        </h4>
+                        <h5>
+                         <%= anunt.mesaj %>
+                        </h5>
+                    </div>
+                    <%})%>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+
+</html>

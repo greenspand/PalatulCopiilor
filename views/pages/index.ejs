@@ -1,0 +1,80 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="well">
+            <h2>Palatul Copiilor</h2>
+            <h4>Palatul Copiilor Cluj - locul tău de petrecere a timpului liber - este situat în centrul municipiului Cluj-Napoca,
+                având filiale în cartierul Mărăști, precum și în zonele de munte, în comunele Baișoara şi Caps-Valea Ierii.</h4>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>Instructori</h4>
+                <% instructori.forEach(function(instructor){ %>
+                    <div class="well">
+                        <h3>
+                            <%= instructor.nume %>
+                        </h3>
+                        <h4>Varsta:
+                            <%= instructor.varsta %>
+                        </h4>
+                        <h4>Adresa:
+                            <%=instructor.adresa%>
+                        </h4>
+                    </div>
+                    <%})%>
+            </div>
+
+            <div class="col-sm-4">
+                <h4>Copii</h4>
+                <% copii.forEach(function(copil){ %>
+                    <div class="well">
+                        <h3>
+                            <%= copil.nume %>
+                        </h3>
+                        <h4>Varsta:
+                            <%= copil.varsta %>
+                        </h4>
+                        <h4>Adresa:
+                            <%=copil.adresa%>
+                        </h4>
+                    </div>
+                    <%})%>
+            </div>
+            <div class="col-sm-4">
+                <h4>Cercuri</h4>
+                <% cercuri.forEach(function(cerc){ %>
+                    <div class="well">
+                        <h3>
+                            <%= cerc.nume %>
+                        </h3>
+                        <h4>Varsta:
+                            <%= cerc.locuri %>
+                        </h4>
+                        <h4>Adresa:
+                            <%=cerc.pret%>
+                        </h4>
+                    </div>
+                    <%})%>
+            </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+
+</html>

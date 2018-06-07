@@ -1,2 +1,0 @@
-MATCH (a)-[r]->(b) RETURN * LIMIT 25
-MATCH(n:Instructor) RETURN n LIMIT 25
