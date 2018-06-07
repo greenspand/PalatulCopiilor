@@ -2,7 +2,6 @@ const express = require('express');
 const neo4j = require('neo4j-driver').v1;
 var router = express.Router();
 const neo4jUtils = require('../utils/neo4jUtils');
-
 var session = neo4jUtils.driver().session();
 
 /* Home Page. */
@@ -22,13 +21,11 @@ function getInstructori(req, res, next) {
           sex: instructor.properties.sex,
           adresa: instructor.properties.adresa
         });
-        console.log(instructor);
       });
       req.instructori = instructorArr;
       return next();
     })
     .catch(function (error) {
-      console.log(error);
       if (error || !rows.length) {
         return next(error);
       }
@@ -48,12 +45,10 @@ function getCopii(req, res, next) {
           sex: copil.properties.sex,
           adresa: copil.properties.adresa
         });
-        console.log(copil);
       });
       req.copii = copiiArr;
       return next();
     }).catch(function (error) {
-      console.log(error);
       if (error || !rows.length) {
         return next(error);
       }
@@ -73,12 +68,10 @@ function getCercuri(req, res, next) {
           pret: cerc.properties.pret,
           locuri: cerc.properties.locuri
         });
-        console.log(cerc);
       });
       req.cercuri = cercuriArr;
       return next();
     }).catch(function (error) {
-      console.log(error);
       if (error || !rows.length) {
         return next(error);
       }

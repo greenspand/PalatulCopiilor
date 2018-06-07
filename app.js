@@ -9,6 +9,9 @@ const port = process.env.PORT || 5000;
 //Setup View Engine
 app.set('view engine', 'ejs');
 
+//Setup MongoDb
+var expressMongoDb = require('express-mongo-db');
+app.use(expressMongoDb('mongodb://localhost/palatulCopiilor'));
 //Setup Logger
 app.use(logger('dev'));
 app.use(bodyParser.json());
