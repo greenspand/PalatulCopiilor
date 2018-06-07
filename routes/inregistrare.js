@@ -27,7 +27,7 @@ function getCopiiMongoDb(req, res, next) {
         return next();
     });
 }
-
+//POST copil sau instructor
 function addCopilSauInstructorMongoDb(req, res, next) {
     var tipUser = req.body.inregistrare_user_tip;
     if (!isBlank(tipUser)) {
