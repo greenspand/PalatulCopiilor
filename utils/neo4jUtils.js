@@ -6,5 +6,8 @@ module.exports = {
             maxTransactionRetryTime: maxRetryTimeMs
         });
         return driver;
+    },
+    isBlank: function isBlank(str) {
+        return (!str || /^\s*$/.test(str));
     }
 };

@@ -3,10 +3,13 @@ var router = express.Router();
 const neo4jUtils = require('../utils/neo4jUtils');
 var session = neo4jUtils.driver().session();
 
+//****************************MONGO_DB HANDLING **************************************************************
 /* GET anunturi*/
 router.get('/', getAnunturiMongoDb, renderAnunturi);
 /* POST anunt nou*/
 router.post('/', addAnuntMongoDb, renderAnunturi);
+// DELETE anunturi
+//router.delete('/:id',deleteAnunturiMongoDb, renderAnunturi);
 
 //GET mongoDb cercuri
 function getAnunturiMongoDb(req, res, next) {
@@ -19,17 +22,33 @@ function getAnunturiMongoDb(req, res, next) {
 
 // POST MOngoDb Cercuri
 function addAnuntMongoDb(req, res, next) {
-  var anunt = {
-    titlu: req.body.anunt_titlu,
-    mesaj: req.body.anunt_mesaj
+  var titluAnunt = req.body.anunt_titlu;
+  var mesajAnunt = req.body.anunt_mesaj;
+  if (!neo4jUtils.isBlank(titluAnunt) && !neo4jUtils.isBlank(mesajAnunt)) {
+    var anunt = {
+      titlu: titluAnunt,
+      mesaj: mesajAnunt
+    }
+    req.db.collection('anunturi').save(anunt, (err, result) => {
+      if (err) return console.log(err)
+      console.log('saved to database')
+    });
   }
-  req.db.collection('anunturi').save(anunt, (err, result) => {
-    if (err) return console.log(err)
-    console.log('saved to database')
-    res.redirect('/anunturi')
-  })
+  res.redirect('/anunturi')
 }
 
+//DELETE Anunturi
+function deleteAnunturiMongoDb(req, res, next) {
+  var btnStergeAnung = req.body.btn_sterge_anunt;
+    req.db.collection('anunturi').remove({
+    }, (err, result) => {
+      if (err) return console.log(err)
+      console.log('deleted from database')
+      res.redirect('/anunturi');
+    });
+}
+
+//****************************NEO4J HANDLING *****************************************************************
 /* GET anunturi*/
 //router.get('/', getAnunturiNeo4j, renderAnunturi);
 /* POST anunt nou*/
@@ -82,5 +101,4 @@ function renderAnunturi(req, res) {
     anunturi: req.anunturi
   })
 }
-
 module.exports = router;

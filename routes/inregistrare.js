@@ -30,7 +30,7 @@ function getCopiiMongoDb(req, res, next) {
 //POST copil sau instructor
 function addCopilSauInstructorMongoDb(req, res, next) {
     var tipUser = req.body.inregistrare_user_tip;
-    if (!isBlank(tipUser)) {
+    if (!neo4jUtils.isBlank(tipUser)) {
         var user = {
             nume: req.body.inregistrare_user_nume,
             adresa: req.body.inregistrare_user_adresa,
@@ -137,9 +137,5 @@ function renderInregistrare(req, res) {
         instructori: req.instructori,
         copii: req.copii
     })
-}
-
-function isBlank(str) {
-    return (!str || /^\s*$/.test(str));
 }
 module.exports = router;
