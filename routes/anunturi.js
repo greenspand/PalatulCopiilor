@@ -4,9 +4,36 @@ const neo4jUtils = require('../utils/neo4jUtils');
 var session = neo4jUtils.driver().session();
 
 /* GET anunturi*/
-router.get('/', getAnunturiNeo4j, renderAnunturi);
+router.get('/', getAnunturiMongoDb, renderAnunturi);
 /* POST anunt nou*/
-router.post('/', addAnunturiNeo4j, renderAnunturi);
+router.post('/', addAnuntMongoDb, renderAnunturi);
+
+//GET mongoDb cercuri
+function getAnunturiMongoDb(req, res, next) {
+  req.db.collection('anunturi').find().toArray(function (err, results) {
+    console.log(results);
+    req.anunturi = results;
+    return next();
+  });
+}
+
+// POST MOngoDb Cercuri
+function addAnuntMongoDb(req, res, next) {
+  var anunt = {
+    titlu: req.body.anunt_titlu,
+    mesaj: req.body.anunt_mesaj
+  }
+  req.db.collection('anunturi').save(anunt, (err, result) => {
+    if (err) return console.log(err)
+    console.log('saved to database')
+    res.redirect('/anunturi')
+  })
+}
+
+/* GET anunturi*/
+//router.get('/', getAnunturiNeo4j, renderAnunturi);
+/* POST anunt nou*/
+//router.post('/', addAnunturiNeo4j, renderAnunturi);
 
 function getAnunturiNeo4j(req, res, next) {
   session.run('MATCH(anunt:Anunt) RETURN anunt LIMIT 25')
