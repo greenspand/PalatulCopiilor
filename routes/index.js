@@ -4,8 +4,41 @@ var router = express.Router();
 const neo4jUtils = require('../utils/neo4jUtils');
 var session = neo4jUtils.driver().session();
 
-/* Home Page. */
-router.get('/', getInstructori, getCopii, getCercuri, renderPalatulCopiilorPage);
+//****************************MONGO_DB HANDLING **************************************************************
+//GET Mongo DB
+router.get('/', getCercuriMongoDb, getInstructoriMongoDb, getCopiiMongoDb, renderPalatulCopiilorPage);
+
+//GET mongoDb cercuri
+function getCercuriMongoDb(req, res, next) {
+  req.db.collection('cercuri').find().toArray(function (err, results) {
+    console.log(results);
+    req.cercuri = results;
+    return next();
+  });
+}
+
+//GET mongoDb Instructori
+function getInstructoriMongoDb(req, res, next) {
+  req.db.collection('instructor').find().toArray(function (err, results) {
+    console.log(results);
+    req.instructori = results;
+    return next();
+  });
+}
+
+//GET mongoDb Copii
+function getCopiiMongoDb(req, res, next) {
+  req.db.collection('copil').find().toArray(function (err, results) {
+    console.log(results);
+    req.copii = results;
+    return next();
+  });
+}
+
+
+//****************************NEO4J HANDLING *****************************************************************
+/* GET neo4j */
+//router.get('/', getInstructori, getCopii, getCercuri, renderPalatulCopiilorPage);
 
 //GET neo4j Instructori
 function getInstructori(req, res, next) {
