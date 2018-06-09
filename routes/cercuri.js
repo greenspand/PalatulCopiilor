@@ -3,6 +3,38 @@ var router = express.Router();
 const neo4jUtils = require('../utils/neo4jUtils');
 var session = neo4jUtils.driver().session();
 
+//****************************MONGO_DB HANDLING **************************************************************
+// GET instructori si copii
+// router.get('/', getCercuriMongoDb, renderCercuri);
+// POST instructori si copii
+// router.post('/', addCercMongoDb, renderCercuri);
+
+//GET mongoDb cercuri
+function getCercuriMongoDb(req, res, next) {
+    req.db.collection('cercuri').find().toArray(function (err, results) {
+        console.log(results);
+        req.cercuri = results;
+        return next();
+    });
+}
+
+// POST MOngoDb Cercuri
+function addCercMongoDb(req, res, next) {
+    var cerc = {
+        nume: req.body.cerc_nume,
+        pret: req.body.cerc_pret,
+        locuri: req.body.cerc_locuri,
+        categorie: req.body.cerc_categorie,
+        descriere: req.body.cerc_descriere
+    }
+    req.db.collection('cercuri').save(cerc, (err, result) => {
+        if (err) return console.log(err)
+        console.log('saved to database')
+        res.redirect('/cercuri')
+    })
+}
+
+//****************************NEO4J HANDLING *****************************************************************
 /* GET cercuri*/
 router.get('/', getCercuriNeo4j, renderCercuri);
 /* POST cerc nou*/
@@ -23,7 +55,7 @@ function getCercuriNeo4j(req, res, next) {
                 console.log(cerc);
             });
             req.cercuri = cercuriArr;
-                  session.close();
+            session.close();
             return next();
         }).catch(function (error) {
             console.log(error);
@@ -33,6 +65,7 @@ function getCercuriNeo4j(req, res, next) {
         });
 }
 
+//Post neo4j cercuri
 function addCercuriNeo4j(req, res, next) {
     var nume = req.body.cerc_nume;
     var pret = req.body.cerc_pret;
