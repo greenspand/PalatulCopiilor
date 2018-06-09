@@ -5,9 +5,9 @@ var session = neo4jUtils.driver().session();
 
 //****************************MONGO_DB HANDLING **************************************************************
 // GET instructori si copii
-router.get('/', getCercuriMongoDb, renderCercuri);
+// router.get('/', getCercuriMongoDb, renderCercuri);
 // POST instructori si copii
-router.post('/', addCercMongoDb, renderCercuri);
+// router.post('/', addCercMongoDb, renderCercuri);
 
 //GET mongoDb cercuri
 function getCercuriMongoDb(req, res, next) {
@@ -36,9 +36,9 @@ function addCercMongoDb(req, res, next) {
 
 //****************************NEO4J HANDLING *****************************************************************
 /* GET cercuri*/
-//router.get('/', getCercuriNeo4j, renderCercuri);
+router.get('/', getCercuriNeo4j, renderCercuri);
 /* POST cerc nou*/
-//router.post('/', addCercuriNeo4j, renderCercuri);
+router.post('/', addCercuriNeo4j, renderCercuri);
 
 function getCercuriNeo4j(req, res, next) {
     session.run('MATCH(cerc:Cerc) RETURN cerc LIMIT 25')

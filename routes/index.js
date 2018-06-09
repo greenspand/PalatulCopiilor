@@ -6,7 +6,7 @@ var session = neo4jUtils.driver().session();
 
 //****************************MONGO_DB HANDLING **************************************************************
 //GET Mongo DB
-router.get('/', getCercuriMongoDb, getInstructoriMongoDb, getCopiiMongoDb, renderPalatulCopiilorPage);
+// router.get('/', getCercuriMongoDb, getInstructoriMongoDb, getCopiiMongoDb, renderPalatulCopiilorPage);
 
 //GET mongoDb cercuri
 function getCercuriMongoDb(req, res, next) {
@@ -35,10 +35,9 @@ function getCopiiMongoDb(req, res, next) {
   });
 }
 
-
 //****************************NEO4J HANDLING *****************************************************************
 /* GET neo4j */
-//router.get('/', getInstructori, getCopii, getCercuri, renderPalatulCopiilorPage);
+router.get('/', getInstructori, getCopii, getCercuri, renderIndex);
 
 //GET neo4j Instructori
 function getInstructori(req, res, next) {
@@ -112,7 +111,7 @@ function getCercuri(req, res, next) {
 }
 
 //Render all fetched on the main page
-function renderPalatulCopiilorPage(req, res) {
+function renderIndex(req, res) {
   res.render('pages/index', {
     instructori: req.instructori,
     copii: req.copii,

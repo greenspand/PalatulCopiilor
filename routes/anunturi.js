@@ -5,9 +5,9 @@ var session = neo4jUtils.driver().session();
 
 //****************************MONGO_DB HANDLING **************************************************************
 /* GET anunturi*/
-router.get('/', getAnunturiMongoDb, renderAnunturi);
+// router.get('/', getAnunturiMongoDb, renderAnunturi);
 /* POST anunt nou*/
-router.post('/', addAnuntMongoDb, renderAnunturi);
+// router.post('/', addAnuntMongoDb, renderAnunturi);
 // DELETE anunturi
 //router.delete('/:id',deleteAnunturiMongoDb, renderAnunturi);
 
@@ -50,9 +50,9 @@ function deleteAnunturiMongoDb(req, res, next) {
 
 //****************************NEO4J HANDLING *****************************************************************
 /* GET anunturi*/
-//router.get('/', getAnunturiNeo4j, renderAnunturi);
+router.get('/', getAnunturiNeo4j, renderAnunturi);
 /* POST anunt nou*/
-//router.post('/', addAnunturiNeo4j, renderAnunturi);
+router.post('/', addAnunturiNeo4j, renderAnunturi);
 
 function getAnunturiNeo4j(req, res, next) {
   session.run('MATCH(anunt:Anunt) RETURN anunt LIMIT 25')

@@ -6,9 +6,9 @@ var session = neo4jUtils.driver().session();
 
 //****************************MONGO_DB HANDLING **************************************************************
 // GET instructori si copii
-router.get('/', getInstructoriMongoDb, getCopiiMongoDb, renderInregistrare);
+// router.get('/', getInstructoriMongoDb, getCopiiMongoDb, renderInregistrare);
 // POST instructori si copii
-router.post('/', addCopilSauInstructorMongoDb, renderInregistrare);
+// router.post('/', addCopilSauInstructorMongoDb, renderInregistrare);
 
 //GET mongoDb Instructori
 function getInstructoriMongoDb(req, res, next) {
@@ -47,9 +47,9 @@ function addCopilSauInstructorMongoDb(req, res, next) {
 
 //****************************NEO4J HANDLING *****************************************************************
 // GET instructori si copii
-//router.get('/', getInstructoriNeo4j, getCopiiNeo4j, renderInregistrare);
+router.get('/', getInstructoriNeo4j, getCopiiNeo4j, renderInregistrare);
 // POST instructori si copii
-//router.post('/', addCopilSauInstructorNeo4J, renderInregistrare);
+router.post('/', addCopilSauInstructorNeo4J, renderInregistrare);
 
 //GET neo4j Instructori
 function getInstructoriNeo4j(req, res, next) {
